@@ -1,7 +1,6 @@
 format_version: 3
 pipelines:
   build_and_publish_image:
-    group: sample
     label_template: ${COUNT}
     lock_behavior: unlockWhenFinished
     display_order: 1
@@ -22,7 +21,6 @@ pipelines:
         jobs:
           build_image:
             timeout: 0
-            elastic_profile_id: demo-app
             artifacts:
             - external:
                 id: bulletin-board
